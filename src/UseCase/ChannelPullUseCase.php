@@ -2,6 +2,7 @@
 namespace App\UseCase;
 
 use App\Entity\Channel;
+use App\Entity\Feed;
 use App\Factory\FeedFactory;
 use App\Repository\ChannelRepository;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -56,7 +57,7 @@ class ChannelPullUseCase
                     $f->setImageUrl( $media->getUrl() );
                     break;
                 }
-                $f->setState(1);
+                $f->setState(Feed::STATE_VISIBLE);
             }
 
             $channel->setLastPullDate(new \DateTime());

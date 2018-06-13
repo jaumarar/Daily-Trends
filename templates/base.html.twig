@@ -1,27 +1,14 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{{  title }}</title>
-        {% block stylesheets %}
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css" />
-            <style>
-                .preview {
-                    width:100%;
-                }
-            </style>
-        {% endblock %}
-    </head>
+{% include 'partials/header.html.twig' %}
     <body>
         {% block body %}
            <div class="container">
                {% for item in items %}
                        <a href="{{ item.url }}" target="_blank" class="row">
-                           <div class="col-sm-4">
+                           <div class="col-md-4">
                                <img class="preview" src="{{ item.imageUrl }}" alt="{{ item.title }}" title="{{ item.title }}">
                            </div>
-                           <div class="col-sm-8">
-                               <h5>{{ item.title }}</h5>
+                           <div class="col-md-8">
+                               <h5>({{ item.id }}) {{ item.title }}</h5>
                                <!--<p>{{ item.description }}</p>-->
                                <small>{{  item.createdDate|date('Y-m-d H:i:s') }}</small>
                            </div>
@@ -29,8 +16,5 @@
                {% endfor %}
            </div>
         {% endblock %}
-        {% block javascripts %}
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js"></script>
-        {% endblock %}
     </body>
-</html>
+{% include 'partials/footer.html.twig' %}

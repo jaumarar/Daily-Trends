@@ -9,6 +9,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Feed
 {
+    const STATE_DELETED = 0;
+    const STATE_VISIBLE = 1;
+    const STATE_INVISIBLE = 2;
     /**
      * @var int
      *

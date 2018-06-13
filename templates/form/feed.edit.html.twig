@@ -1,0 +1,8 @@
+{# show message #}
+  {% if message is not empty %}
+      <p>{{ message }}</p>
+  {% endif %}
+
+  {{ form_start(form) }}
+  {{ form_widget(form) }}
+  {{ form_end(form) }}

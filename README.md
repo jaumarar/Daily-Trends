@@ -4,6 +4,21 @@
 
 Database configured by default > Access: root:root, Name: daily_trends
 
+**CONFIGURE APACHE**
+
+`sudo a2enmod rewrite`
+
+`sudo nano /etc/apache2/sites-available/000-default.conf`
+
+`<Directory "/var/www/demoAvantio/public">
+    Options Indexes FollowSymLinks
+    AllowOverride All
+    Require all granted
+</Directory>`
+
+`sudo apache2 restart`
+
+
 **INSTALL COMPOSER GLOBALLY**
 
 `curl -sS https://getcomposer.org/installer -o composer-setup.php`
